@@ -31,6 +31,11 @@ export const state = () => ({
       { title: 'Projects', content: 'Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.', icon: '' },
       { title: 'Profile', content: 'Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.', icon: '' },
       { title: 'Reviews', content: 'Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.', icon: '' }
+    ],
+    notifications: [
+      {
+        title: 'Office closed on July 2nd', content: 'Cum qui rem deleniti. Suscipit in dolor veritatis sequi aut.                  Vero ut earum quis deleniti.Ut a sunt eum cum ut repudiandae possimus.Nihil ex tempora neque cum consectetur dolores.'
+      }
     ]
   }
 
@@ -47,6 +52,9 @@ export const getters = {
   },
   getCards: (state) => {
     return state.data.cards;
+  },
+  getNotifications: (state) => {
+    return state.data.notifications;
   }
 }
 export const actions = {}
