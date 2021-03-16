@@ -14,6 +14,7 @@ module.exports = {
         teal: colors.teal,
         cyan: colors.cyan,
         rose: colors.rose,
+        'zgreen': '#94c83d'
       }
     }
   },
