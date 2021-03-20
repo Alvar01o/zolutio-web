@@ -2,14 +2,14 @@
   <div class="bg-white">
     <div class="relative overflow-hidden">
       <header class="relative">
-        <div class="bg-gray-900 pt-6">
+        <div class="bg-gray-900 pt-4 pb-2">
           <nav
             class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
             aria-label="Global"
           >
             <div class="flex items-center flex-1">
               <div class="flex items-center justify-between w-full md:w-auto">
-                <a href="#">
+                <a href="#" class="pt-2">
                   <span class="sr-only">Zolutio</span>
                   <img class="h-8 w-auto sm:h-10" src="/icon2.png" alt="" />
                 </a>
@@ -43,25 +43,19 @@
                 <a
                   href="#"
                   class="text-base font-medium text-white hover:text-gray-300"
-                  >Product</a
+                  >Products</a
                 >
 
                 <a
                   href="#"
                   class="text-base font-medium text-white hover:text-gray-300"
-                  >Features</a
+                  >About us</a
                 >
 
                 <a
                   href="#"
                   class="text-base font-medium text-white hover:text-gray-300"
-                  >Marketplace</a
-                >
-
-                <a
-                  href="#"
-                  class="text-base font-medium text-white hover:text-gray-300"
-                  >Company</a
+                  >Contact</a
                 >
               </div>
             </div>
@@ -209,22 +203,8 @@
                           </button>
                         </div>
                       </div>
-                      <p class="mt-3 text-sm text-gray-300 sm:mt-4">
-                        Start your free 14-day trial, no credit card necessary.
-                        By providing your email, you agree to our
-                        <a href="#" class="font-medium text-white"
-                          >terms or service</a
-                        >.
-                      </p>
                     </form>
                   </div>
-                </div>
-              </div>
-              <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
-                <div
-                  class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0"
-                >
-                  <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
                 </div>
               </div>
             </div>
