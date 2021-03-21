@@ -57,6 +57,9 @@
 
     <!-- CTA section -->
     <div class="bg-gradient-to-b from-zgreen-dark to-black">
+      <div class="max-w-2xl float-right py-48 pr-48">
+        <img src="icon2.png" width="200" height="400" alt="" />
+      </div>
       <div
         class="max-w-2xl py-16 px-6 text-right md:py-64 sm:py-64 sm:px-6 lg:px-8"
       >
@@ -66,13 +69,6 @@
           >
           <span class="block">Let us Bring Your Vision to Life!</span>
         </h2>
-
-        <a
-          href="#"
-          class="mt-8 w-full bg-cyan-50 border border-transparent rounded-md py-3 px-5 inline-flex items-left justify-left text-base font-medium text-cyan-700 hover:bg-cyan-100 sm:w-auto"
-        >
-          Contact
-        </a>
       </div>
     </div>
 

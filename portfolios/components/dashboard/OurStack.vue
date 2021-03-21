@@ -1,7 +1,7 @@
 <template>
   <div class="bg-zgreen-dark">
     <h2
-      class="text-3xl font-extrabold tracking-tight pt-5 text-center sm:text-4xl text-zgreen"
+      class="text-3xl font-extrabold tracking-tight pt-12 text-center sm:text-4xl text-zgreen"
     >
       OUR STACK
     </h2>
@@ -28,6 +28,48 @@
             class="max-h-12"
             src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
             alt="Tuple"
+          />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img
+            class="max-h-12"
+            src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
+            alt="Laravel"
+          />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img
+            class="max-h-12"
+            src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+            alt="StaticKit"
+          />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img
+            class="max-h-12"
+            src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
+            alt="Statamic"
+          />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img
+            class="max-h-12"
+            src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
+            alt="Laravel"
+          />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img
+            class="max-h-12"
+            src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+            alt="StaticKit"
+          />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img
+            class="max-h-12"
+            src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
+            alt="Statamic"
           />
         </div>
         <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
