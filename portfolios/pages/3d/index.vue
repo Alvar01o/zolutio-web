@@ -5,6 +5,17 @@
 import * as THREE from 'three'
 export default {
   layout: 'empty',
+  data() {
+    return {
+      camera: null,
+      scene: null,
+      renderer: null,
+    }
+  },
+  computed: {
+    doSomething: function () {},
+  },
+  mounted() {},
 }
 </script>
 
