@@ -32,26 +32,6 @@
             ></div>
           </div>
         </div>
-
-        <div
-          class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
-        >
-          <div
-            class="rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50"
-          >
-            <div class="pt-5 pb-6 px-5">
-              <div class="flex items-center justify-between">
-                <div>
-                  <img
-                    class="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-cyan-600.svg"
-                    alt="Workflow"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
