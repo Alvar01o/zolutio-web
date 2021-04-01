@@ -25,11 +25,13 @@ export const state = () => ({
     team: [
       {
         name: 'Alvaro Mercado',
-        photo: '',
+        photo: 'alvaro.jpg',
         position: 'CO-founder',
         skills: [
           'PHP'
-        ]
+        ],
+        twitter: '',
+        linkedin: 'https://www.linkedin.com/in/alvaro-mercado-6b387a10b/'
       },
       {
         name: 'C.A.',
@@ -38,7 +40,9 @@ export const state = () => ({
         skills: [
           'Javascript',
           'AWS'
-        ]
+        ],
+        twitter: '',
+        linkedin: ''
       }
     ],
     footer: {
