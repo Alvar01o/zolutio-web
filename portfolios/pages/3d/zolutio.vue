@@ -6,6 +6,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { TeapotGeometry } from 'three/examples/jsm/geometries/TeapotGeometry.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { GUI } from 'three/examples/jsm/libs/dat.gui.module.js'
 export default {
   layout: 'empty',
   data() {
@@ -16,34 +17,7 @@ export default {
       scene: undefined,
       renderer: undefined,
       cameraControls: undefined,
-      effectController: {
-        shininess: 40.0,
-        ka: 0.17,
-        kd: 0.51,
-        ks: 0.2,
-        metallic: true,
-
-        hue: 0.121,
-        saturation: 0.73,
-        lightness: 0.66,
-
-        lhue: 0.04,
-        lsaturation: 0.01, // non-zero so that fractions will be shown
-        llightness: 1.0,
-
-        // bizarrely, if you initialize these with negative numbers, the sliders
-        // will not show any decimal places.
-        lx: 0.32,
-        ly: 0.39,
-        lz: 0.7,
-        newTess: 15,
-        bottom: true,
-        lid: true,
-        body: true,
-        fitLid: false,
-        nonblinn: false,
-        newShading: 'glossy',
-      },
+      effectController: undefined,
       teapotSize: 400,
       ambientLight: undefined,
       light: undefined,
@@ -165,6 +139,7 @@ export default {
 
       this.scene.add(this.ambientLight)
       this.scene.add(this.light)
+      this.setupGui()
     },
     onWindowResize: function () {
       const canvasWidth = this.w
@@ -286,21 +261,173 @@ export default {
       let self = this
       var loader = new GLTFLoader()
       loader.setPath('../')
+      let glTFGeometry = undefined
       loader.load('logo.gltf', function (gltf) {
-        let glTFGeometry = undefined
         gltf.scene.traverse(function (child) {
           if (child.isMesh) {
             // child.material.envMap = envMap
             //Setting the buffer geometry
             glTFGeometry = child.geometry
+            let logo = new THREE.Mesh(
+              glTFGeometry,
+              self.shading === 'wireframe'
+                ? self.wireMaterial
+                : self.shading === 'flat'
+                ? self.flatMaterial
+                : self.shading === 'smooth'
+                ? self.gouraudMaterial
+                : self.shading === 'glossy'
+                ? self.phongMaterial
+                : self.shading === 'textured'
+                ? self.texturedMaterial
+                : self.reflectiveMaterial
+            ) // if no match, pick Phong
+            self.scene.add(logo)
           }
         })
-        console.log('geo', glTFGeometry)
-        const material = new THREE.MeshBasicMaterial({ color: 0xffff00 })
-        let logo = new THREE.Mesh(glTFGeometry, material) // if no match, pick Phong
-        self.scene.add(logo)
       })
       //      this.scene.add(this.teapot)
+    },
+    setupGui: function () {
+      this.effectController = {
+        shininess: 40.0,
+        ka: 0.17,
+        kd: 0.51,
+        ks: 0.2,
+        metallic: true,
+
+        hue: 0.121,
+        saturation: 0.73,
+        lightness: 0.66,
+
+        lhue: 0.04,
+        lsaturation: 0.01, // non-zero so that fractions will be shown
+        llightness: 1.0,
+
+        // bizarrely, if you initialize these with negative numbers, the sliders
+        // will not show any decimal places.
+        lx: 0.32,
+        ly: 0.39,
+        lz: 0.7,
+        newTess: 15,
+        bottom: true,
+        lid: true,
+        body: true,
+        fitLid: false,
+        nonblinn: false,
+        newShading: 'glossy',
+      }
+
+      let h
+
+      const gui = new GUI()
+
+      // material (attributes)
+
+      h = gui.addFolder('Material control')
+
+      h.add(this.effectController, 'shininess', 1.0, 400.0, 1.0)
+        .name('shininess')
+        .onChange(this.render)
+      h.add(this.effectController, 'kd', 0.0, 1.0, 0.025)
+        .name('diffuse strength')
+        .onChange(this.render)
+      h.add(this.effectController, 'ks', 0.0, 1.0, 0.025)
+        .name('specular strength')
+        .onChange(this.render)
+      h.add(this.effectController, 'metallic').onChange(this.render)
+
+      // material (color)
+
+      h = gui.addFolder('Material color')
+
+      h.add(this.effectController, 'hue', 0.0, 1.0, 0.025)
+        .name('hue')
+        .onChange(this.render)
+      h.add(this.effectController, 'saturation', 0.0, 1.0, 0.025)
+        .name('saturation')
+        .onChange(this.render)
+      h.add(this.effectController, 'lightness', 0.0, 1.0, 0.025)
+        .name('lightness')
+        .onChange(this.render)
+
+      // light (point)
+
+      h = gui.addFolder('Lighting')
+
+      h.add(this.effectController, 'lhue', 0.0, 1.0, 0.025)
+        .name('hue')
+        .onChange(this.render)
+      h.add(this.effectController, 'lsaturation', 0.0, 1.0, 0.025)
+        .name('saturation')
+        .onChange(this.render)
+      h.add(this.effectController, 'llightness', 0.0, 1.0, 0.025)
+        .name('lightness')
+        .onChange(this.render)
+      h.add(this.effectController, 'ka', 0.0, 1.0, 0.025)
+        .name('ambient')
+        .onChange(this.render)
+
+      // light (directional)
+
+      h = gui.addFolder('Light direction')
+
+      h.add(this.effectController, 'lx', -1.0, 1.0, 0.025)
+        .name('x')
+        .onChange(this.render)
+      h.add(this.effectController, 'ly', -1.0, 1.0, 0.025)
+        .name('y')
+        .onChange(this.render)
+      h.add(this.effectController, 'lz', -1.0, 1.0, 0.025)
+        .name('z')
+        .onChange(this.render)
+
+      h = gui.addFolder('Tessellation control')
+      h.add(this.effectController, 'newTess', [
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        15,
+        20,
+        30,
+        40,
+        50,
+      ])
+        .name('Tessellation Level')
+        .onChange(this.render)
+      h.add(this.effectController, 'lid')
+        .name('display lid')
+        .onChange(this.render)
+      h.add(this.effectController, 'body')
+        .name('display body')
+        .onChange(this.render)
+      h.add(this.effectController, 'bottom')
+        .name('display bottom')
+        .onChange(this.render)
+      h.add(this.effectController, 'fitLid')
+        .name('snug lid')
+        .onChange(this.render)
+      h.add(this.effectController, 'nonblinn')
+        .name('original scale')
+        .onChange(this.render)
+
+      // shading
+
+      gui
+        .add(this.effectController, 'newShading', [
+          'wireframe',
+          'flat',
+          'smooth',
+          'glossy',
+          'textured',
+          'reflective',
+        ])
+        .name('Shading')
+        .onChange(this.render)
     },
   },
   mounted() {
