@@ -18,20 +18,16 @@
         <ul
           class="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl"
         >
-          <li v-for="user in [100, 200, 300, 400, 500, 600]">
+          <li v-for="(user, index) in team" :key="index">
             <div class="space-y-6">
               <div
-                :class="
-                  'rounded-full h-40 w-40 flex mx-auto bg-green-' +
-                  user +
-                  ' xl:w-56 xl:h-56 items-center justify-center'
-                "
+                :class="'rounded-full h-40 w-40 flex mx-auto bg-zgreen xl:w-56 xl:h-56 items-center justify-center'"
               ></div>
 
               <div class="space-y-2">
                 <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Whitney Francis</h3>
-                  <p class="text-indigo-600">Copywriter</p>
+                  <h3>{{ user.name }}</h3>
+                  <p class="text-indigo-600">{{ user.position }}</p>
                 </div>
                 <ul class="flex justify-center space-x-5">
                   <li>
@@ -50,7 +46,10 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a
+                      :href="user.LinkedIn"
+                      class="text-gray-400 hover:text-gray-500"
+                    >
                       <span class="sr-only">LinkedIn</span>
                       <svg
                         class="w-5 h-5"
@@ -76,7 +75,13 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'OurTeam',
+  computed: {
+    ...mapGetters({
+      team: 'zolutio/getTeam',
+    }),
+  },
 }
 </script>
