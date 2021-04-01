@@ -31,7 +31,7 @@ export const state = () => ({
           'PHP'
         ],
         twitter: '',
-        linkedin: 'https://www.linkedin.com/in/alvaro-mercado-6b387a10b/'
+        LinkedIn: 'https://www.linkedin.com/in/alvaro-mercado-6b387a10b/'
       },
       {
         name: 'C.A.',
@@ -42,7 +42,7 @@ export const state = () => ({
           'AWS'
         ],
         twitter: '',
-        linkedin: ''
+        LinkedIn: ''
       }
     ],
     footer: {

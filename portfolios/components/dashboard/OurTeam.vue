@@ -46,7 +46,10 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a
+                      :href="user.LinkedIn"
+                      class="text-gray-400 hover:text-gray-500"
+                    >
                       <span class="sr-only">LinkedIn</span>
                       <svg
                         class="w-5 h-5"
