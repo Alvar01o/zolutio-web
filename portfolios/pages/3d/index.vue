@@ -3,6 +3,7 @@
 </template>
 <script>
 import * as THREE from 'three'
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 export default {
   layout: 'empty',
   data() {
