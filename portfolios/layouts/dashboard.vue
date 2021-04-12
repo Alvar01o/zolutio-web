@@ -71,7 +71,7 @@
         <h1
           class="text-4xl leading-10 font-extrabold tracking-tight text-zgreen text-center sm:text-5xl sm:leading-none lg:text-6xl"
         >
-          Get in touch
+          Page Under Construction
         </h1>
         <p
           class="mt-6 max-w-3xl mx-auto text-xl leading-normal text-gray-500 text-center"

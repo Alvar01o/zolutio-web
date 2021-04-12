@@ -16,13 +16,14 @@
         >
           <li v-for="(user, index) in team" :key="index">
             <div class="space-y-6">
-              <img :class="'rounded-full h-40 w-40 flex mx-auto bg-zgreen xl:w-56 xl:h-56 items-center justify-center'" :src="user.photo" />
-
+              <img v-if="user.photo" :class="'rounded-full h-40 w-40 flex mx-auto bg-zgreen xl:w-56 xl:h-56 items-center justify-center'" :src="user.photo" />
+              <div v-if="!user.photo" :class="'rounded-full h-40 w-40 flex mx-auto bg-zgreen xl:w-56 xl:h-56 items-center justify-center'"  />
 
               <div class="space-y-2">
                 <div class="text-lg leading-6 font-medium space-y-1">
                   <h3>{{ user.name }}</h3>
                   <p class="text-indigo-600">{{ user.position }}</p>
+                  <p class="text-indigo-600">Sr. FullStack Developer</p>
                 </div>
                 <ul class="flex justify-center space-x-5">
                   <li>
