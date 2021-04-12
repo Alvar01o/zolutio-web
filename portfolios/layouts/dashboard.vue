@@ -28,7 +28,7 @@
               </a>
               <a
                 href="#contact"
-                class="text-base font-medium text-gray-200 hover:text-zgreen"
+                class="text-base font-medium text-gray-200 hover:text-zgreen hidden"
               >
                 CONTACT
               </a>
