@@ -11,7 +11,8 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/icon2.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/icon2.png' },
+      { rel: 'stylesheet',  href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' }
     ]
   },
 

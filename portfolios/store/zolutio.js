@@ -2,24 +2,64 @@ export const state = () => ({
   dashboard: {
     stack: [
       {
-        name: 'LARAVEL',
-        logo: ''
+        name: 'PHP',
+        logo: 'logos/php.svg'
+      },
+      {
+        name: 'NGINX',
+        logo: 'logos/nginx.svg'
       },
       {
         name: 'NODEJS',
-        logo: ''
+        logo: 'logos/nodejs.svg'
       },
       {
-        name: 'NUXTJS',
-        logo: ''
+        name: 'DOCKER',
+        logo: 'logos/docker.svg'
       },
       {
         name: 'VUEJS',
-        logo: ''
+        logo: 'logos/vuejs.svg'
+      },
+      {
+        name: 'LINUX',
+        logo: 'logos/linux.svg'
+      },
+      {
+        name: 'LARAVEL',
+        logo: 'logos/laravel.svg'
+      },
+      {
+        name: 'NUXTJS',
+        logo: 'logos/nuxtjs.svg'
       },
       {
         name: 'AWS',
-        logo: ''
+        logo: 'logos/aws.svg'
+      },
+      {
+        name: 'MONGODB',
+        logo: 'logos/mongodb.svg'
+      },
+      {
+        name: 'MYSQL',
+        logo: 'logos/mysql.svg'
+      },
+      {
+        name: 'BOOTSTRAP',
+        logo: 'logos/bootstrap.svg'
+      },
+      {
+        name: 'TAILWINDCSS',
+        logo: 'logos/tailwindcss.svg'
+      },
+      {
+        name: 'REDIS',
+        logo: 'logos/redis.svg'
+      },
+      {
+        name: 'REACTJS',
+        logo: 'logos/reactjs.svg'
       }
     ],
     team: [

@@ -21,6 +21,12 @@
                 TEAM
               </a>
               <a
+                href="#stack"
+                class="text-base font-medium text-gray-200 hover:text-zgreen"
+              >
+                OUR STACK
+              </a>
+              <a
                 href="#contact"
                 class="text-base font-medium text-gray-200 hover:text-zgreen"
               >
@@ -37,17 +43,17 @@
 
     <!-- CTA section -->
     <div class="bg-gradient-to-b from-zgreen-dark to-black">
-      <div class="max-w-2xl float-right py-48 pr-48">
+      <div class="max-w-2xl float-right py-64 pr-48 animate__animated animate__fadeInDown animate__delay-2s">
         <img src="icon2.png" width="200" height="400" alt="" />
       </div>
       <div
-        class="max-w-2xl py-16 px-6 text-right md:py-64 sm:py-64 sm:px-6 lg:px-8"
+        class="max-w-2xl py-16 px-6 text-right md:py-72 sm:py-64 sm:px-6 lg:px-8"
       >
         <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-          <span class="block text-zgreen"
+          <span class="block text-zgreen animate__animated animate__fadeInLeft animate__delay-2s "
             >Dedicated & Reliable Software Development</span
           >
-          <span class="block">Let us Bring Your Vision to Life!</span>
+          <span class="block animate__animated animate__fadeInLeft animate__delay-2s">Let us Bring Your Vision to Life!</span>
         </h2>
       </div>
     </div>
@@ -70,9 +76,6 @@
         <p
           class="mt-6 max-w-3xl mx-auto text-xl leading-normal text-gray-500 text-center"
         >
-          Convallis feugiat et aliquet pellentesque dictum nisi, velit. Egestas
-          fermentum adipiscing risus quam ac consectetur mattis turpis
-          tristique.
         </p>
       </div>
     </div>
