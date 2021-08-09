@@ -14,12 +14,15 @@
             </div>
 
             <nav class="hidden md:flex space-x-10">
+<!--
               <a
                 href="#team"
                 class="text-base font-medium text-gray-200 hover:text-zgreen"
               >
                 TEAM
               </a>
+
+-->
               <a
                 href="#stack"
                 class="text-base font-medium text-gray-200 hover:text-zgreen"
@@ -42,9 +45,9 @@
     </div>
 
     <!-- CTA section -->
-    <div class="bg-gradient-to-b from-zgreen-dark to-black">
-      <div class="max-w-2xl float-right py-64 pr-48 animate__animated animate__fadeInDown animate__delay-2s">
-        <img src="icon2.png" width="200" height="400" alt="" />
+    <div class="bg-gradient-to-b from-zgreen-dark to-black h-screen min-h-screen">
+      <div class="max-w-2xl float-right py-48 pr-48 animate__animated animate__fadeInDown animate__delay-2s">
+        <ZLogo />
       </div>
       <div
         class="max-w-2xl py-16 px-6 text-right md:py-72 sm:py-64 sm:px-6 lg:px-8"
@@ -58,11 +61,11 @@
       </div>
     </div>
 
-    <!-- CTA section -->
+    <!-- CTA section-->
     <OurStack />
 
-    <!-- Zolutio Team-->
-    <OurTeam />
+    <!-- Zolutio Team
+    <OurTeam />-->
     <!-- Header -->
     <div class="py-24 bg-gray-50 sm:py-32">
       <div
@@ -91,13 +94,14 @@ import OurTeam from '/components/dashboard/OurTeam'
 import OurStack from '/components/dashboard/OurStack'
 import Footer from '/components/dashboard/Footer'
 import Contact from '/components/dashboard/Contact'
-
+import ZLogo from '/components/dashboard/Zlogo'
 export default {
   components: {
     Footer,
     OurTeam,
     OurStack,
     Contact,
+    ZLogo,
   },
 }
 </script>
